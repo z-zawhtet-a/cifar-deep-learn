@@ -1,0 +1,39 @@
+# PROGRAM: read_cifar10.py
+# 
+# This code is created to read CIFAR10 unzip images to pandas dataframe
+# 
+# HISTORY: 30 July 2014 Created by Titipat Achakulvisut
+#
+# NOTATION: use '_' as a variable name
+#           use capital letter e.g. getImage() as a function
+
+import numpy as np
+import os, sys
+import re # regular expression
+import pandas as pd # pandas
+import matplotlib.pyplot as plt # matplotlib library
+import cv2 # opencv library
+
+##### GET DIRECTORY  #####
+
+curr_path = os.getcwd() # current directory
+working_path = curr_path + '/../Kaggle/CIFAR10' # for Titipat
+# working_path = curr_path + '...' # for Zaw
+print working_path
+
+test_path = working_path + '/test'
+train_path = working_path + '/train'
+full_train_path = [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(train_path)) for f in fn]
+full_test_path = [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(test_path)) for f in fn]
+
+# test print
+print full_train_path[1:3]
+print full_test_path[1:3]
+
+##### READ CSV file #####
+train_labels = pd.read_csv(working_path + '/trainLabels.csv', header = TRUE)
+print train_labels[1:3,:]
+
+##### READ IMAGE AND STORE IN ARRAY #####
+
+
