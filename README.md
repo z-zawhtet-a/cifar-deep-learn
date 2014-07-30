@@ -1,7 +1,7 @@
 cifar-deep-learn
 ================
 
-This is project to create Deep learning algorithm for CIFAR10 
+This is project to create Deep learning algorithm to classify CIFAR10 dataset
 
 Main Aim:
 - Implementing Feature Extraction using RBM then classify using SVM
