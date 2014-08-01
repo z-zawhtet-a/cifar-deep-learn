@@ -1,9 +1,12 @@
 # This is simple code to test pushing code on Github
 #
 # Created by Titipat Achakulvisut, 29 July 2014
+# 
+# 
 
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 m = 2
 n = 2
