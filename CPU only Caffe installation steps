@@ -32,13 +32,13 @@ run brew doctor  ### Ignore warnings :-) Close your eyes and run the rest of the
 
 5. pip install -r requirements.txt
 
-6. Place the "Makefile.config" in the caffe-dev dir.
+6. Place the modified "Makefile.config" and "Makefile" in the caffe-dev dir.
 
 7. cd back to caffe-dev/ and run "make all -j4"
 
 8. Then, "make pycaffe"
 
-9. Place "python/caffe" folder and "python/_caffe.so" file in /usr/local/lib/python2.7/site-packages/
+9. Copy and place the "python/Caffe" folder in /usr/local/lib/python2.7/site-packages/
 
 10. Try importing caffe by "import caffe"
 
