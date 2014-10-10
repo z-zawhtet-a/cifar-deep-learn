@@ -22,12 +22,12 @@ import cv2 # opencv library
 ##### GET DIRECTORY  #####
 
 curr_path = os.getcwd() # current directory
-working_path = curr_path + '/../Kaggle/CIFAR10' # for Titipat
+working_path = os.path.join(curr_path, '/../Kaggle/CIFAR10') # for Titipat
 # working_path = curr_path + '...' # for Zaw
 # print working_path
 
-test_path = working_path + '/test'
-train_path = working_path + '/train'
+test_path = os.path.join(working_path, '/test')
+train_path = os.path.join(working_path, '/train')
 full_train_path = [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(train_path)) for f in fn]
 full_test_path = [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(test_path)) for f in fn]
 
