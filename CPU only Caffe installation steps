@@ -1,0 +1,47 @@
+### CPU only Caffe installation steps on OS X 10.9 without using libstdc++ standard
+### If you are currently using macports
+### run "nano .profile" and change export PATH=bin:/opt/local... to  export PATH=/usr/local/bin:$PATH first
+
+1. Install homebrew - (run in Terminal) - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+run brew doctor  ### Ignore warnings :-) Close your eyes and run the rest of the commands!
+
+2. brew tap homebrew/science
+   
+   # Prep system
+   brew install gcc
+   brew install swig
+
+   # Python 
+   brew install python
+
+   # Scientific packages for Python
+   brew tap homebrew/science
+   brew install suite-sparse
+   
+   # Dependencies
+   "Put boost.rb in your homefolder first i.e. /Users/yourname/"
+   brew install boost.rb --with-python	#Because we need boost 1.55
+   brew install --with-python protobuf
+   for x in snappy leveldb gflags glog szip lmdb hdf5; do brew install $x; done
+   brew install opencv --with-tbb --with-eigen --with-python
+
+3. Download zip - https://github.com/BVLC/caffe/tree/dev
+
+4. Unzip and cd to caffe-dev/python/
+
+5. pip install -r requirements.txt
+
+6. Place the modified "Makefile.config" and "Makefile" in the caffe-dev dir.
+
+6.1. Overwrite the original with the modified "gtest.h" in /Users/yourname/path-to/caffe-dev/src/gtest
+
+7. cd back to caffe-dev/ and run "make all -j4"
+
+8. Then, "make pycaffe"
+
+9. Copy and place the "python/Caffe" folder in /usr/local/lib/python2.7/site-packages/
+
+10. Try importing caffe by "import caffe"
+
+
