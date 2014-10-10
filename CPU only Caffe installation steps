@@ -1,4 +1,4 @@
-### CPU only Caffe installation steps
+### CPU only Caffe installation steps on OS X 10.9 without using libstdc++ standard
 ### If you are currently using macports
 ### run "nano .profile" and change export PATH=bin:/opt/local... to  export PATH=/usr/local/bin:$PATH first
 
@@ -33,6 +33,8 @@ run brew doctor  ### Ignore warnings :-) Close your eyes and run the rest of the
 5. pip install -r requirements.txt
 
 6. Place the modified "Makefile.config" and "Makefile" in the caffe-dev dir.
+
+6.1. Overwrite the original with the modified "gtest.h" in /Users/yourname/path-to/caffe-dev/src/gtest
 
 7. cd back to caffe-dev/ and run "make all -j4"
 
