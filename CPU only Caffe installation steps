@@ -30,7 +30,7 @@ run brew doctor  ### Ignore warnings :-) Close your eyes and run the rest of the
 
 5. pip install -r requirements.txt
 
-6. Place the modified "Makefile.config" and "Makefile" in the caffe-dev dir.
+6. Place the modified "Makefile.config" in the caffe-dev dir.
 
 6.1. Overwrite the original with the modified "gtest.h" in /Users/yourname/path-to/caffe-dev/src/gtest
 
